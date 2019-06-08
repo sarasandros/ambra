@@ -1,0 +1,230 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>アンブラコレクション</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css">
+<link href="css/collection.css" rel="stylesheet" type="text/css">
+<link href="css/jquery.pagepiling.css" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+ $(function(){　//ページの内容（HTMLやCSSなど）を全て読み込み準備が整ったら実行
+  $('.btnHamburger,#coverlayer,#nav').on('click', function(){　//.btnHamburgerがクリックされた時の処理
+    $('.btnHamburger,#coverlayer,#nav').toggleClass('is-active');　//.is-activeを付ける・外す
+  });
+});	
+</script>
+
+
+</head>
+
+<body>
+	
+<!--ハンバーガーメニュー-->
+<div class="btnHamburger">
+<span class="line line_01"></span>
+<span class="line line_02"></span>
+<span class="line line_03"></span>
+</div>
+
+<!--カバーレイヤー-->
+<div id="coverlayer"></div>
+	
+<div id="nav">
+  <ul>
+    <li><a href="index.html">Top </a></li>
+    <li><a href="collection.html">Collection</a></li>
+    <li><a href="message.html">Message from Ambra</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  </div>
+	
+	
+<nav>
+    <ul>
+        <li data-menuanchor="page1" class="active"><a href="#page1">Collection1</a></li>
+        <li data-menuanchor="page2"><a href="#page2">Collection2</a></li>
+        <li data-menuanchor="page3"><a href="#page3">Collection3</a></li>
+        <li data-menuanchor="page4"><a href="#page4">Collection4</a>
+		</li>
+		<li data-menuanchor="page5"><a href="#page5">Collection5</a>
+		</li>
+    </ul>
+</nav>
+	
+
+<div id="pagepiling">
+	
+    <section class="section" id="section1">
+		<div id="co1">
+		<picture>	
+<source media="(max-width: 599px)" srcset="images/rose_sp@828.jpg 2x,images/rose_sp@1500 3x">
+<source media="(max-width: 959px)" srcset="images/rose_bk.jpg 2x">
+<img src="images/rose_bk.jpg" alt="コレクション①ローズ"/>
+		</picture>	
+		</div>
+		
+		<div class="perfume">
+<picture>
+<source media="(max-width:320px)" srcset="images/perfume_rose_sp@400.png 2x">
+<source media="(max-width: 599px)" srcset="images/perfume_rose_sp@560.png 2x,images/perfume_rose_sp@840.png 3x">
+<source media="(max-width: 959px)" srcset="images/perfume_rose_sp@840.png 2x">
+<img src="images/perfume_rose_co1.png" alt="ローズボトル">
+</picture>	
+	  </div>
+		
+		
+	 <div class="content">
+<picture>
+<source media="(max-width:320px)" srcset="images/rose_c_sp@680.png 2x">
+<source media="(max-width: 599px)" srcset="images/rose_c_sp@840.png 2x,images/rose_c_sp@1260.png 3x">
+<source media="(max-width: 959px)" srcset="images/rose_c_sp@1260.png 2x">
+<img src="images/rose_c.png"　alt="ローズ説明"/>
+</picture>
+		</div>
+		
+  </section>
+
+		
+    <section class="section" id="section2">
+		<div id="co2">
+		<picture>	
+<source media="(max-width: 599px)" srcset="images/lav_sp@828.jpg 2x,images/lav_sp@1500.jpg 3x">
+<source media="(max-width: 959px)" srcset="images/lavender_bk.jpg 2x">
+<img src="images/lavender_bk.jpg" alt="コレクション②ラベンダー"/>
+		</picture>
+			</div>
+		
+	  <div class="perfume">
+		  <picture>
+<source media="(max-width:320px)" srcset="images/perfume_lav_sp@400.png 2x">
+<source media="(max-width: 599px)" srcset="images/perfume_lav_sp@560.png 2x,images/perfume_lav_sp@840.png 3x">
+<source media="(max-width: 959px)" srcset="images/perfume_lav_sp@840.png 2x">
+<img src="images/perfume_lav_co2.png" alt="ラベンダーボトル"/>
+</picture>	
+  </div>
+		
+		<div class="content">
+			<picture>
+<source media="(max-width:320px)" srcset="images/lavender_c_sp@680.png 2x">
+<source media="(max-width: 599px)" srcset="images/lavender_c_sp@840.png 2x,images/lavender_c_sp@1260.png 3x">
+<source media="(max-width: 959px)" srcset="images/lavender_c_sp@1260.png 2x">
+<img src="images/lavender_c.png" alt="ラベンダーボトル"/>
+</picture>
+</div>
+  </section>
+
+    
+	<section class="section" id="section3">
+        <div id="co3">
+<picture>	
+<source media="(max-width: 599px)" srcset="images/lilly@828.jpg 2x,images/lilly_sp@1500.jpg 3x">
+<source media="(max-width: 959px)" srcset="images/lilly_bk.jpg 2x">
+<img src="images/lilly_bk.jpg" alt="コレクション③すずらん"/>
+</picture>
+	</div>
+		
+	  <div class="perfume">
+		 <picture>
+<source media="(max-width:320px)" srcset="images/perfume_lilly_sp@400.png 2x">
+<source media="(max-width: 599px)" srcset="images/perfume_lilly_sp@560.png 2x,images/perfume_lilly_sp@840.png 3x">
+<source media="(max-width: 959px)" srcset="images/perfume_lilly_sp@840.png 2x">
+ <img src="images/perfume_lilly_co3.png" alt="すずらんボトル"/>
+</picture>	
+</div>
+		
+		<div class="content">
+<picture>
+<source media="(max-width:320px)" srcset="images/lilly_c_sp@680.png 2x">
+<source media="(max-width: 599px)" srcset="images/lilly_c_sp@840.png 2x,images/rose_c_sp@1260.png 3x">
+<source media="(max-width: 959px)" srcset="images/rose_c_sp@1260.png 2x">
+<img src="images/lilly_c.png" alt="すずらん説明"/>
+</picture>
+</div>
+		</section>
+	
+		
+    <section class="section" id="section4">
+    <div id="co4">
+		<picture>	
+<source media="(max-width: 599px)" srcset="images/lemon_sp@828.jpg 2x,images/lemon_sp@1500.jpg 3x">
+<source media="(max-width: 959px)" srcset="images/lemon_bk.jpg 2x">
+<img src="images/lemon_bk.jpg" alt="コレクション④レモン"/>
+		</picture>
+		</div>
+		
+	<div class="perfume">
+		<picture>
+<source media="(max-width:320px)" srcset="images/perfume_lemon_sp@400.png 2x">
+<source media="(max-width: 599px)" srcset="images/perfume_lemon_sp@560.png 2x,images/perfume_lemon_sp@840.png 3x">
+<source media="(max-width: 959px)" srcset="images/perfume_lemon_sp@840.png 2x">
+<img src="images/perfume_lemon_co4.png" alt="レモンボトル"/>
+</picture>	
+ </div>
+		
+	  <div class="content">
+ <picture>
+<source media="(max-width:320px)" srcset="images/lemon_c_sp@680.png 2x">
+<source media="(max-width: 599px)" srcset="images/lemon_c_sp@840.png 2x,images/lemon_c_sp@1260.png 3x">
+<source media="(max-width: 959px)" srcset="images/lemon_c_sp@1260.png 2x">
+<img src="images/lemon_c.png" alt="レモン説明"/>
+</picture> 
+</div>
+	</section>
+	
+		
+	<section class="section" id="section5">
+	<div id="co5">	
+		<picture>	
+<source media="(max-width: 599px)" srcset="images/mint_sp@828.jpg 2x,images/mint_sp@1500.jpg 3x">
+<source media="(max-width: 959px)" srcset="images/mint_bk.jpg 2x">
+<img src="images/mint_bk.jpg" alt="コレクション⑤ミント"/>
+		</picture>
+	</div>
+		
+	 <div class="perfume">
+<picture>
+<source media="(max-width:320px)" srcset="images/perfume_mint_sp@400.png 2x">
+<source media="(max-width: 599px)" srcset="images/perfume_mint_sp@560.png 2x,images/perfume_mint_sp@840.png 3x">
+<source media="(max-width: 959px)" srcset="images/perfume_mint_sp@840.png 2x">
+<img src="images/perfume_mint_co5.png" alt="ミントボトル"/>
+</picture>
+</div>
+		
+	  <div class="content">
+<picture>
+<source media="(max-width:320px)" srcset="images/mint_c_sp@680.png 2x">
+<source media="(max-width: 599px)" srcset="images/mint_c_sp@840.png 2x,images/mint_c_sp@1260.png 3x">
+<source media="(max-width: 959px)" srcset="images/mint_c_sp@1260.png 2x">
+<img src="images/mint_c.png" alt="ミント説明"/>
+</picture>	
+		</div>
+
+		
+	</section>
+
+		
+</div>
+	
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.pagepiling.js"></script>
+<script>
+$(function() {
+    $('#pagepiling').pagepiling({
+        menu: 'nav',
+        sectionSelector: '.section',
+        sectionsColor: ['#fff', '#eee', '#ddd', '#ccc'],
+        anchors: ['page1', 'page2', 'page3', 'page4','page5'],
+        navigation: {
+            'textColor': '#000',
+            'bulletsColor': '#000',
+            'position': 'right',
+            'tooltips': ['collection1', 'collection2', 'collection3', 'collection4','collection5']
+        },
+    });
+});
+</script>
+</body>
+</html>

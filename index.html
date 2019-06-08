@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>スペイン王室アンブラ妃プロデュースの香水ブランドアンブラ</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+ $(document).ready(function(){
+  $('.ambra h1,.ambra p,#picture,#message,.collection h1,.collection h2,.collection p,#floral,.view,#refresh,.usage h1,.usage p,.usage h2,.usage h3,.bt,.tl,.cl,.news h1,.news h2,.news p,#contact,#content').css('visibility','hidden');
+ $(window).scroll(function(){
+ var windowHeight = $(window).height(),
+     topWindow = $(window).scrollTop();
+ $('.ambra h1,.ambra p,#picture,#message,.collection h1,.collection h2,.collection p,#floral,.view,#refresh,.usage h1,.usage p,.usage h2,.usage h3,.bt,.tl,.cl,.news h1,.news h2,.news p,#contact,#content').each(function(){
+  var targetPosition = $(this).offset().top;
+  if(topWindow > targetPosition - windowHeight + 100){
+   $(this).addClass("fadeInDown");
+  }
+ });
+});
+});
+
+</script>
+<script>
+ $(function(){　//ページの内容（HTMLやCSSなど）を全て読み込み準備が整ったら実行
+  $('.btnHamburger,#coverlayer,nav').on('click', function(){　//.btnHamburgerがクリックされた時の処理
+    $('.btnHamburger,#coverlayer,nav').toggleClass('is-active');　//.is-activeを付ける・外す
+  });
+});	
+</script>
+	
+<script>
+  $(document).ready(function() {
+    var pagetop = $('.pagetop');
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 1000) {
+            pagetop.fadeIn();
+        } else {
+            pagetop.fadeOut();
+        }
+    });
+    pagetop.click(function () {
+        $('body, html').animate({ scrollTop: 0 }, 500);
+        return false;
+    });
+});
+	
+</script>
+	
+<!--<script>
+$(document).ready(function(){
+  $(window).load(function(){
+	$('.loading').fadeOut();	
+});
+</script>-->
+
+<script type="text/javascript" src="js/jquery.backstretch.js"></script>
+<script>
+$(document).ready(function() {
+　　  $.backstretch("images/bs.jpg");
+
+    });
+</script>
+
+<script>
+	$(function() {
+    var n = window.location.href.slice(window.location.href.indexOf('?') + 4);
+    if(n.length < $("#sample class").size()) {
+        var p = $("#sample class").eq(n).offset().top;
+        $('html,body').animate({ scrollTop: p }, 'slow');
+        return false;
+    }
+});
+</script>
+	</head>
+
+<body id="top">
+
+
+<!--ローディングメニュー-->
+<!--<div class="loading">
+    <div class="animation">Now Loading...</div>
+</div>-->
+
+<!--ハンバーガーメニュー-->
+<div class="btnHamburger">
+<span class="line line_01"></span>
+<span class="line line_02"></span>
+<span class="line line_03"></span>
+</div>
+
+<!--カバーレイヤー-->
+<div id="coverlayer"></div>
+	
+<nav>
+  <ul>
+    <li><a href="index.html">Top </a></li>
+    <li><a href="collection.html">Collection</a></li>
+    <li><a href="message.html">Message from Ambra</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  </nav>
+	
+
+
+<div class="box">
+<img class="pc" src="images/art@2000.jpg" alt="パソコン用の画像">
+<div id="logo"><img src="images/ambra_logo.png" alt="アンブラロゴ"/></div>
+<img class="sp" src="images/art@1500.jpg" alt="スマートフォン用の画像">
+</div>
+	
+<div id="wrapper">
+<main>
+<article>
+<section class="ambra">
+<h1>Ambra</h1>
+<p>スペイン王室王妃であり</p>
+<p>ビルバオ グッゲンハイム美術館館長でもある</p>
+<p>アンブラ王妃</p>
+<p>美貌のプリンセスでありながら才色兼備</p>
+<p>そんな国民が憧れるプリンセスが</p>
+<p>Perfumeを自らプロデュース</p>	
+<div id="picture"><img src="images/princess.png" alt="アンブラ王妃"/></div>
+<div id="message"><a href="message.html">message from Ambra</a></div>
+</section>
+</article>
+<article>
+<section class="collection0">
+<h1>Collection</h1>
+</section>
+<section class="collection1 collection">
+<h2>フローラル系</h2>
+<p>上品な甘さと爽やかさを兼ね備えています。
+ちょっと甘めの爽やかな印象を与えてくれる香りです。
+爽やかさを強調するも良し、甘さや上品さを強調するも良し。
+シーンを選ばず使えるので、一つは持っておきたい香り。</p>
+<div id="floral"><img src="images/floral.jpg" alt="フローラル系香水"/></div>
+<div class="view"><a href="collection.html">view more</a></div>
+
+</section>
+<section class="collection2 collection">
+<h2>柑橘系、リフレッシュ系</h2>
+<p>ビジネスでもプライベートでも使いやすいので人気があります。
+スッキリと爽やかな明るい印象を与えてくれ、眠気防止や集中力アップなどのリフレッシュ効果もあります。フローラル系同様、主力として活躍してくれる香り。</p>
+<div id="refresh"><img src="images/refresh.jpg" alt="柑橘系香水"/></div>
+<div class="view"><a href="collection.html">view more</a></div>
+</section>
+</article>
+
+<div class="usage0">
+<h1>Other Usage</h1>
+</div>
+<article class="usage">
+<section class="usage1">
+<p>香水は実は本来の使い方以外にもいろんな用途があります。
+アンブラ王妃もオススメの使い方教えちゃいます。</p>
+<h2>バスタイムに</h2>
+<p>香水を数的、湯船に入れてみてください。身体に付けるのとはまた違った香りが楽しめます。 リラックスできるシーンでよりリラックス効果のある香水を掛け合わせれば相乗効果が。
+ゴージャスな気分でバスタイムを満喫してください。</p>
+<h3>オススメの香り</h3>
+<p>Lavendar(ラベンダー)</p>
+<div class="bt"><img src="images/perfume_lav.png" alt="ラベンダー香水"/></div>
+</section>
+<section class="usage2">
+<h2>お手洗いに</h2>
+<p>蓋を空けて置いておく、リード(竹串のようなもの)を挿してディフューザーとして使う、など。おしゃれな使い方ですね。</p>
+<h3>オススメの香り</h3>
+<p>Mint(ミント)</p>
+<div class="tl"><img src="images/perfume_mint.png" alt="ミント香水"/></div>
+</section>
+<section class="usage3">
+<h2>クローゼットに</h2>
+<p>いらない布に香水を含ませて、布製の巾着などに入れるとサシェになります。洋服に香りをそっと移すことができます。
+いつもいい香りをさりげなく身に纏っていれば、自然と好感度も上がるはず。ほんのり嫌味ない香りになるのでオススメです。
+<br>※サシェ＝におい袋。香粉(こうふん)などが入っていて、たんすの引き出しなどに入れておく小袋のこと。</p>
+<h3>オススメの香り</h3>
+<p>Rose(ローズ)</p>
+<div class="cl"><a href="#"><img src="images/perfume_rose.png" alt="ローズ香水"/></a></div>
+</section>
+</article>
+<article>
+<section class="news">
+<h1>News</h1>
+<h2>Perfume展示会イベント</h2>
+<p>アンブラ王妃プロデュースの香水ブランド</p>
+<p>「Ambra」</p>
+<p>立ち上げを記念して</p>
+<p>ビルバオ、グッゲンハイム美術館で</p>
+<p>アンブラ王妃のこれまでの歴史と共に</p>
+<p>今回リリースされる香水を展示</p>
+<h2>開催期間</h2>
+<p>2019年5月1日〜2019年8月31日</p>
+<h2>料金</h2>
+<p>入園料のみ</p>
+<h2>場所</h2>
+<p>グッゲンハイム美術館1階特設スペース</p>
+<div id="contact"><a href="contact.html">contact</a></div>
+<div id="content">
+<div id="princess"><img src="images/beautiful-princess.jpg" alt="アンブラ王妃"/></div>
+<div id="perfumes"><img src="images/perfumes.jpg" alt="香水展示"/></div>
+<div id="muse"><img src="images/muse.jpg" alt="ビルバオ、グッゲンハイム美術館"/></div>
+</div>
+</section>	
+</article>
+</main>
+<footer><small>Copyright &copy; 2019 Ambra. All rights reserved.</small></footer>
+</div>
+<p class="pagetop"><a href="#top">↑</a></p>
+</body>
+</html>

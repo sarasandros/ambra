@@ -1,0 +1,273 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*全デバイス共通の設定*/
+.cf:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+html{
+	overflow: auto;
+}
+body{
+	overflow: hidden;
+	min-width: 100%;
+}
+img{
+	vertical-align: bottom;
+	max-width: 100%;
+	height: auto;
+}
+#wrapper{
+	width: 100%;
+}
+
+
+/*クリック前のハンバーガーメニュー*/
+/* クリックエリアと位置を指定 ---------------------- */
+.btnHamburger {
+  position: fixed;
+  top: 10px;
+  left: 30px;
+  margin-left: -25px;
+  width: 50px; /* クリックエリアの横幅*/
+  height: 50px; /* クリックエリアの高さ*/
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* 3本線の1本ごとに共通するスタイルを指定 ---------------------- */
+.btnHamburger .line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 50px; /* 横幅 */
+  height: 3px; /* 1本辺りの高さ */
+  background: #a38a00; /* 線の色 */
+
+  /* 適用するプロパティ、変化する時間、変化する速度 */
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+ }
+
+/* 3本線の各線の位置を指定 ---------------------- */
+.btnHamburger .line_01 { top: 10px; }
+.btnHamburger .line_02 { top: 24px; }
+.btnHamburger .line_03 { top: 38px; }
+
+/*クリック前の暗転するカバー*/
+#coverlayer{
+	width: 1px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	background: #000;
+	opacity: 0;
+	transition: 0.5s;
+	z-index: 998;
+}
+
+/*クリック後のハンバーガーメニュー*/
+/* 最上部の線のスタイル ---------------------- */
+.btnHamburger .line.is-active{
+	color: #ccac00;
+}
+.btnHamburger.is-active .line_01 {
+  top: 24px; /* 上から2番目の線の位置に変更 */
+
+  /* 線を45度回転 */
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* 上から2番目の線のスタイル ---------------------- */
+.btnHamburger.is-active .line_02 {
+  opacity: 0; /* 不透明度を下げて線を消す */
+}
+
+/* 最下部の線のスタイル ---------------------- */
+.btnHamburger.is-active .line_03 {
+  top: 24px; /* 上から2番目の線の位置に変更 */
+
+  /* 線を135度回転 */
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+/*クリック後の暗転するカバー*/
+#coverlayer.is-active{
+	width: 100%;
+	opacity: 0.8;
+}
+/*navのクリック前の状態*/
+nav{
+	position: fixed;
+	top:60px;
+	left:-180px;
+	width: 180px;
+	opacity: 1;
+	z-index: 999;
+	
+}
+nav ul{
+  height: 100%;
+}
+nav ul li a{
+  display: block;
+  color: #fff;
+  text-decoration: none;
+	text-align: center;
+	box-sizing: border-box;
+	line-height: 50px;
+	
+}
+/*navのクリック後の状態*/
+nav.is-active{
+	opacity: 1;
+	top: 60px;
+	left:0;
+	right:0;
+	bottom: 0;
+	margin: auto;
+	transition: 0.5s;
+}
+
+/*スマホ用の設定*/
+#top_main{
+	position: relative;
+	height: 200px;
+	width: 100%;
+	background-image: url("../images/messagebk.jpg");
+}#top_main h1{
+	text-align: center;
+	padding: 50px;
+}
+main section{
+	padding: 10px;
+}
+main section h1{
+	font-size: 18px;
+	padding: 30px 0 10px 0;
+}
+main section p{
+	display: inline-block;
+	padding-bottom: 5px;
+}
+	main section span{
+		display: block;
+		text-align: right;
+		font-weight: bold;
+	}
+#collection a{
+	display: block;
+	color: #000;
+	text-decoration: none;
+	border: 1px solid #000;
+	width: 80px;
+	line-height: 40px;
+	text-align: center;
+	margin: 50px 0 0 300px;
+}
+#essential{
+	margin-top: -90px
+}
+
+/*iPhone5,SE用の設定*/
+@media screen and (max-width:320px){
+	main section{
+		position: relative;
+	}
+	#collection{
+		position: absolute;
+		top: 750px;
+		right: 30px
+	}
+	#essential{
+		padding-top: 130px
+	}
+}
+
+/*Galaxy S5用の設定*/
+@media screen and (max-width:360px){
+	main section{
+		position: relative;
+	}
+	#collection{
+		position: absolute;
+		top: 680px;
+		right: 30px
+	}
+	#essential{
+		padding-top: 130px
+	}
+}
+
+/*iPhone6,7,8/X用の設定*/
+@media screen and (max-width:375px){
+	main section{
+		position: relative;
+	}
+	#collection{
+		position: absolute;
+		top: 650px;
+		right: 30px
+	}
+	#essential{
+		padding-top: 130px
+	}
+}
+
+/*タブレット用の設定*/
+@media screen and (min-width:595px){
+    main section{
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%,0);
+	}
+		main section span{
+		display: block;
+		text-align: right;
+	}
+}
+/*PC用の設定*/
+@media screen and (min-width:960px){
+	#wrapper{
+		widht:960px;
+	}
+#top_main{
+	position: relative;
+	height: 200px;
+	width: 100vw;
+	background-image: url("../images/messagebk.jpg");
+}
+#top_main h1{
+	text-align: center;
+	padding: 50px;
+}
+main section{
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%,0);
+	}
+	main section span{
+		display: block;
+		text-align: right;
+	}
+	#collection a{
+		display: block;
+		color: #000;
+		text-decoration: none;
+		border: 1px solid #000;
+		width: 100px;
+		line-height: 50px;
+		text-align: center;
+		margin: 100px 0 0 400px
+	}
+	#essential{
+		margin-top: -150px;
+	}
+
+}

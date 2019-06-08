@@ -1,0 +1,174 @@
+@charset "UTF-8";
+/* CSS Document */
+/*全デバイス共通のスタイル*/
+.cf:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+img{
+	vertical-align: bottom;
+	max-width: 100%;
+	height: auto;
+}
+body{
+	font-size: 100%;
+	color: #000;
+	text-shadow: 1px 1px 1px #a38a00;
+	font-family: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "serif";
+	line-height: 1.5;
+	-webkit-text-size-adjust:100%;
+}
+#wrapper{
+	width: 100%;
+	margin: 0 auto;
+	background: url("../images/contact_back.jpg");
+}
+
+/*クリック前のハンバーガーメニュー*/
+/* クリックエリアと位置を指定 ---------------------- */
+.btnHamburger {
+  position: fixed;
+  top: 10px;
+  left: 30px;
+  margin-left: -25px;
+  width: 50px; /* クリックエリアの横幅*/
+  height: 50px; /* クリックエリアの高さ*/
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* 3本線の1本ごとに共通するスタイルを指定 ---------------------- */
+.btnHamburger .line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 50px; /* 横幅 */
+  height: 3px; /* 1本辺りの高さ */
+  background: #a38a00; /* 線の色 */
+
+  /* 適用するプロパティ、変化する時間、変化する速度 */
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+ }
+
+/* 3本線の各線の位置を指定 ---------------------- */
+.btnHamburger .line_01 { top: 10px; }
+.btnHamburger .line_02 { top: 24px; }
+.btnHamburger .line_03 { top: 38px; }
+
+/*クリック前の暗転するカバー*/
+#coverlayer{
+	width: 1px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	background: #000;
+	opacity: 0;
+	transition: 0.5s;
+	z-index: 998;
+}
+
+/*クリック後のハンバーガーメニュー*/
+/* 最上部の線のスタイル ---------------------- */
+.btnHamburger .line.is-active{
+	color: #ccac00;
+}
+.btnHamburger.is-active .line_01 {
+  top: 24px; /* 上から2番目の線の位置に変更 */
+
+  /* 線を45度回転 */
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* 上から2番目の線のスタイル ---------------------- */
+.btnHamburger.is-active .line_02 {
+  opacity: 0; /* 不透明度を下げて線を消す */
+}
+
+/* 最下部の線のスタイル ---------------------- */
+.btnHamburger.is-active .line_03 {
+  top: 24px; /* 上から2番目の線の位置に変更 */
+
+  /* 線を135度回転 */
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+/*クリック後の暗転するカバー*/
+#coverlayer.is-active{
+	width: 100%;
+	opacity: 0.8;
+}
+/*navのクリック前の状態*/
+nav{
+	position: fixed;
+	top:60px;
+	left:-180px;
+	width: 180px;
+	opacity: 0;
+	
+}
+nav ul{
+  height: 100%;
+}
+nav ul li a{
+  display: block;
+  color: #fff;
+  text-decoration: none;
+	text-align: center;
+	box-sizing: border-box;
+	line-height: 50px;
+	z-index: 999;
+}
+/*navのクリック後の状態*/
+nav.is-active{
+	opacity: 1;
+	top: 60px;
+	left:0;
+	right:0;
+	bottom: 0;
+	margin: auto;
+	transition: 0.5s;
+}
+
+
+
+/*スマートフォン用スタイル*/
+header h1{
+	width: 53.333%;
+	margin: 0 auto;
+	padding: 30px 0;
+}
+section{
+	position: relative;
+}
+section h1{
+	position: absolute;
+	top: 60px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	height: 100%;
+}
+dl dt{
+	padding-left: 10%;
+}
+dl dd{
+	padding-left: 10%;
+	padding-bottom: 10px;
+}
+footer{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 10px;
+	margin: auto;
+	font-size: 75%;
+	text-align: center;
+}

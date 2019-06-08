@@ -1,0 +1,363 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*全デバイス共通の設定*/
+.cf:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+img{
+	vertical-align: bottom;
+	max-height: 100%;
+	height: auto;
+}
+
+html,body{
+	font-size: 100%;
+	color: #000;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+	background: #D27678;
+	line-height: 1.5;
+	height: 100%;
+	overflow: hidden;
+}
+
+/*クリック前のハンバーガーメニュー*/
+/* クリックエリアと位置を指定 ---------------------- */
+.btnHamburger {
+  position: fixed;
+  top: 10px;
+  left: 30px;
+  margin-left: -25px;
+  width: 50px; /* クリックエリアの横幅*/
+  height: 50px; /* クリックエリアの高さ*/
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* 3本線の1本ごとに共通するスタイルを指定 ---------------------- */
+.btnHamburger .line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 50px; /* 横幅 */
+  height: 3px; /* 1本辺りの高さ */
+  background: #a38a00; /* 線の色 */
+
+  /* 適用するプロパティ、変化する時間、変化する速度 */
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+ }
+
+/* 3本線の各線の位置を指定 ---------------------- */
+.btnHamburger .line_01 { top: 10px; }
+.btnHamburger .line_02 { top: 24px; }
+.btnHamburger .line_03 { top: 38px; }
+
+/*クリック前の暗転するカバー*/
+#coverlayer{
+	width: 1px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	background: #000;
+	opacity: 0;
+	transition: 0.5s;
+	z-index: 998;
+}
+
+/*クリック後のハンバーガーメニュー*/
+/* 最上部の線のスタイル ---------------------- */
+.btnHamburger .line.is-active{
+	color: #ccac00;
+}
+.btnHamburger.is-active .line_01 {
+  top: 24px; /* 上から2番目の線の位置に変更 */
+
+  /* 線を45度回転 */
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* 上から2番目の線のスタイル ---------------------- */
+.btnHamburger.is-active .line_02 {
+  opacity: 0; /* 不透明度を下げて線を消す */
+}
+
+/* 最下部の線のスタイル ---------------------- */
+.btnHamburger.is-active .line_03 {
+  top: 24px; /* 上から2番目の線の位置に変更 */
+
+  /* 線を135度回転 */
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+/*クリック後の暗転するカバー*/
+#coverlayer.is-active{
+	width: 100%;
+	opacity: 0.8;
+}
+/*navのクリック前の状態*/
+#nav{
+	position: fixed;
+	top:60px;
+	left:-180px;
+	width: 180px;
+	opacity: 1;
+	z-index: 999;
+	
+}
+#nav ul{
+  height: 100%;
+}
+#nav ul li a{
+  display: block;
+  color: #fff;
+  text-decoration: none;
+	text-align: center;
+	box-sizing: border-box;
+	line-height: 50px;
+	
+}
+/*navのクリック後の状態*/
+#nav.is-active{
+	opacity: 1;
+	top: 60px;
+	left:0;
+	right:0;
+	bottom: 0;
+	margin: auto;
+	transition: 0.5s;
+}
+
+/*スマホ用の設定*/
+nav{
+	display: none;
+}
+.section{
+	overflow: hidden;
+}
+.perfume{
+	position: absolute;
+	top: 18%;
+	left: 35%;
+	transform: translateY(-50%) translateX(-50%);
+	z-index: 80;
+}
+.content{
+	position: absolute;
+	top: 45%;
+	left: 38%;
+	transform: translateY(-50%) translateX(-50%);
+	z-index: 79;
+}
+
+
+
+
+/*Galaxy S5用の設定*/
+@media screen and (max-width:360px){
+	.perfume{
+		position: absolute;
+		top: 155px;
+		left: 180px;
+	}
+	.content{
+		position: absolute;
+		top: 400px;
+		left: 180px;		
+	}
+}
+
+
+
+/*iPhone 6,7,8/X用の設定*/
+@media screen and (max-width:375px){
+	.perfume{
+		position: absolute;
+		top: 155px;
+		left: 200px;
+	}
+	.content{
+		position: absolute;
+		top: 400px;
+		left: 190px;
+	}
+	body{
+		margin: 0;
+	}
+}
+
+
+/*Pixel2/2XL用の設定*/
+@media screen and (max-width:411px){
+	.perfume{
+		position: absolute;
+		top: 155px;
+		left: 210px;
+	}
+	.content{
+		position: absolute;
+		top: 400px;
+		left: 205px;
+	}
+}
+
+
+/*iPhone6,7,8Plus用の設定*/
+@media screen and (max-width:414px){
+	.perfume{
+		position: absolute;
+		top: 155px;
+		left: 210px;
+	}
+	.content{
+		position: absolute;
+		top: 400px;
+		left: 207px
+	}
+}
+
+/*タブレット用の設定*/
+@media screen and (min-width:600px){
+	#co1 img,
+#co2 img,
+#co3 img,
+#co4 img,
+#co5 img{
+	vertical-align: bottom;
+	width: 100%;
+	max-height: 100%;
+	height: auto;	
+	min-height: 100vh;/* %にすると上下に余白ができる*/
+}	
+}
+
+
+/*PCの設定*/
+@media screen and (min-width:960px){
+	/*.pc{
+		display: block;
+	}
+	.sp{
+		display: none;
+	}*/
+	
+	
+#co1 img,
+#co2 img,
+#co3 img,
+#co4 img,
+#co5 img{
+	vertical-align: bottom;
+	width: 100%;
+	max-height: 100%;
+	height: auto;	
+	min-height: 100vh;/* %にすると上下に余白ができる*/
+}	
+.content{
+	width: 470px;
+	position: absolute;
+	top:50%;
+	left: 75%;
+	transform: translateY(-50%) translateX(-50%);	
+	
+}
+.section{
+	position: relative;
+}
+
+.perfume{
+	width: 480px;
+	position: absolute;
+	top: 50%;
+	left:25%;
+	transform: translateY(-50%) translateX(-50%);
+}	
+
+
+.left_box2 {
+	position: absolute;
+	left:0;
+	bottom: 0;
+	background: #7B5F60;
+}
+ 
+.right_box2 {
+	position: absolute;
+	right:0;
+	bottom: 0;
+	background: #49B363;
+} 
+.left_box3 {
+	position: absolute;
+	left:0;
+	bottom: 0;
+	background: #4CB975;
+}
+ 
+.right_box3 {
+	position: absolute;
+	right:0;
+	bottom: 0;
+	background: #1D32DF;
+} 
+.left_box4 {
+	position: absolute;
+	left:0;
+	bottom: 0;
+	background: #757523;
+}
+ 
+.right_box4 {
+	position: absolute;
+	right:0;
+	bottom: 0;
+	background: #1D32DF;
+}  
+.left_box5 {
+	position: absolute;
+	left:0;
+	bottom: 0;
+	background: #BB2AA4;
+}
+ 
+.right_box5 {
+	position: absolute;
+	right:0;
+	bottom: 0;
+	background: #E4E664;
+}      
+nav{
+	display: block;
+	position: fixed;
+	z-index: 100;
+	margin-top: 10px;
+	padding-left: 80px;
+	
+}
+nav ul{
+	display: flex;
+}
+nav ul li a{
+	display: block;
+	color: #000;
+	text-decoration: none;
+	/*margin: 0 10px 0 ;	
+	padding: 5px;*/
+    width: 85px;
+	border: 1px solid #000;
+	text-align: center;
+	line-height: 30px;
+	margin: 10px
+	
+}
+
+nav ul li a:hover{
+	color: #fff;
+}
+}

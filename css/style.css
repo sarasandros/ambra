@@ -1,0 +1,727 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*全デバイス共通のスタイル*/
+@font-face{
+	font-family: "myfont";
+	src: url("../Dancing_Script/DancingScript-Regular.ttf");
+}
+@keyframes fadein{
+	0%{ opacity: 0;}
+	100%{opacity: 1;}
+}
+.cf:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+img{
+	vertical-align: bottom;
+	max-width: 100%;
+	height: auto;
+}
+body{
+	font-size: 100%;
+	font-family: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "serif";
+	color: #000;
+	background: #fff;
+	line-height: 1.5;
+	animation: fadein 5s;
+	-webkit-text-size-adjust:100%;
+}
+#wrapper{
+	width: 100%;
+	margin: 0 auto;
+}
+
+/*ローディングメニュー*/
+/* ローディング画面の背景 */
+/*.loading {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+  background: #000;
+  z-index: 99999;
+}
+*/
+/* アニメーション */
+/*.animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: #fff;
+  -webkit-animation: loadinganimation 1500ms ease-out forwards infinite;
+  animation: loadinganimation 1500ms ease-out forwards infinite;
+}
+@keyframes loadinganimation {
+  from,to {
+		opacity: 0;
+  }
+  50% {
+		opacity: .5;
+  }
+}*/
+
+
+/*フェードインアニメーション*/
+.fadeInDown {
+ -webkit-animation-fill-mode:both;
+ -ms-animation-fill-mode:both;
+ animation-fill-mode:both;
+ -webkit-animation-duration:1s;
+ -ms-animation-duration:1s;
+ animation-duration:1s;
+ -webkit-animation-name: fadeInDown;
+ animation-name: fadeInDown;
+ visibility: visible !important;
+}
+@-webkit-keyframes fadeInDown {
+ 0% { opacity: 0; -webkit-transform: translateY(-20px); }
+ 100% { opacity: 1; -webkit-transform: translateY(0); }
+}
+@keyframes fadeInDown {
+ 0% { opacity: 0; -webkit-transform: translateY(-20px); -ms-transform: translateY(-20px); transform: translateY(-20px); }
+ 100% { opacity: 1; -webkit-transform: translateY(0); -ms-transform: translateY(0); transform: translateY(0); }
+}
+
+/*トップへ戻るボタン*/
+.pagetop {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+.pagetop a {
+    display: block;
+    background-color: #ccc;
+    text-align: center;
+    color: #222;
+    font-size: 16px;
+	opacity: 0.4;
+    text-decoration: none;
+    padding: 20px 10px;
+}
+
+
+/*クリック前のハンバーガーメニュー*/
+/* クリックエリアと位置を指定 ---------------------- */
+.btnHamburger {
+  position: fixed;
+  top: 10px;
+  left: 30px;
+  margin-left: -25px;
+  width: 50px; /* クリックエリアの横幅*/
+  height: 50px; /* クリックエリアの高さ*/
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* 3本線の1本ごとに共通するスタイルを指定 ---------------------- */
+.btnHamburger .line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 50px; /* 横幅 */
+  height: 3px; /* 1本辺りの高さ */
+  background: #a38a00; /* 線の色 */
+
+  /* 適用するプロパティ、変化する時間、変化する速度 */
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+ }
+
+/* 3本線の各線の位置を指定 ---------------------- */
+.btnHamburger .line_01 { top: 10px; }
+.btnHamburger .line_02 { top: 24px; }
+.btnHamburger .line_03 { top: 38px; }
+
+/*クリック前の暗転するカバー*/
+#coverlayer{
+	width: 1px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	background: #000;
+	opacity: 0;
+	transition: 0.5s;
+	z-index: 998;
+}
+
+/*クリック後のハンバーガーメニュー*/
+/* 最上部の線のスタイル ---------------------- */
+.btnHamburger .line.is-active{
+	color: #ccac00;
+}
+.btnHamburger.is-active .line_01 {
+  top: 24px; /* 上から2番目の線の位置に変更 */
+
+  /* 線を45度回転 */
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* 上から2番目の線のスタイル ---------------------- */
+.btnHamburger.is-active .line_02 {
+  opacity: 0; /* 不透明度を下げて線を消す */
+}
+
+/* 最下部の線のスタイル ---------------------- */
+.btnHamburger.is-active .line_03 {
+  top: 24px; /* 上から2番目の線の位置に変更 */
+
+  /* 線を135度回転 */
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+/*クリック後の暗転するカバー*/
+#coverlayer.is-active{
+	width: 100%;
+	opacity: 0.8;
+}
+/*navのクリック前の状態*/
+nav{
+	position: fixed;
+	top:60px;
+	left:-180px;
+	width: 180px;
+	opacity: 1;
+	z-index: 999;
+	
+}
+nav ul{
+  height: 100%;
+}
+nav ul li a{
+  display: block;
+  color: #fff;
+  text-decoration: none;
+	text-align: center;
+	box-sizing: border-box;
+	line-height: 50px;
+	
+}
+/*navのクリック後の状態*/
+nav.is-active{
+	opacity: 1;
+	top: 60px;
+	left:0;
+	right:0;
+	bottom: 0;
+	margin: auto;
+	transition: 0.5s;
+}
+
+
+
+
+/*スマートフォン用スタイル*/
+.pc { 
+	display: none; 
+}
+.sp { 
+	display: block; 
+}
+#logo{
+	display: none;
+}
+.ambra{
+	height: 300px;
+	text-align: center;	
+	position: relative;
+}
+.ambra h1{
+	font-size: 150%;
+	padding: 50px 0 30px 0;
+	font-weight: bold;
+	
+}
+.ambra p:last-child{
+	padding-bottom: 50px;
+}
+#message{
+	position: absolute;
+	top: 450px;
+	left: 13.333%;
+	font-family: "myfont";
+	border: 1px solid #666;
+	width: 21.3333%;
+	padding: 0.8%;
+	z-index: 1000;
+}
+#message a{
+	display: block;
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+	
+}
+.collection0{
+	padding-top:300px;
+}
+.collection0 h1{
+	font-size: 150%;
+	font-weight: bold;
+	text-align: center;
+	padding-bottom: 10px;
+}
+.collection1{
+	padding-top: 30px;
+	position: relative;
+	background: #fff;
+}
+
+.collection2{
+	margin-top: 30px;
+}
+#group{
+    padding-top: 30px;
+	padding-right: 10px;
+	padding-left: 10px;
+	position: relative;
+	background: #fff;
+}
+.collection{
+	padding: 0.52083%;
+}
+.collection h1{
+	font-size: 150%;
+	text-align: center;
+	font-weight: bold;
+	padding: 30px 0;
+}
+.collection h2{
+	text-align: center;
+	font-weight: bold;
+	padding-top: 30px;
+	
+}
+.collection1 .view{	
+	position: absolute;
+	top: 160px;
+	left: 66.6666%;
+}
+.collection2{
+	padding-top: 30px;
+	position: relative;
+	background: #fff;
+}
+.collection2 .view{
+	position: absolute;
+	top: 190px;
+	left: 70.666%;
+}
+
+.view{
+	width: 21.333%;
+	border: 1px solid #666;
+	line-height: 40px;
+	text-align: center;
+}
+.view a{
+	display: block;
+	color: #000;
+	text-decoration: none;
+}
+
+.usage0 h1{
+	font-size: 150%;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 50px;
+}
+.usage{
+	height: 1790px;
+	background: url("../images/background2.jpg");
+	background-repeat: repeat-y;
+	/*margin-top: 80px;*/
+	padding: 1.3333%;
+}
+.usage p{
+	padding-top: 10px;
+}
+.usage h2{
+	font-size: 112.5%;
+	font-weight: bold;
+	padding: 30px 0 10px 0;
+}
+.usage h3{
+	font-weight: bold;
+	padding-top: 1.3333%;	
+}
+.usage1 h1{
+	font-size: 150%;
+	font-weight: bold;
+	text-align: center;
+	padding: 30px 0;
+}
+.usage1 p:nth-child(5){
+	color: #870EF3;
+	text-align: center;
+	text-shadow: 1px 1px 1px #fff;
+	font-weight: bold;
+}
+.usage2{
+	padding-top: 80px;
+}
+.usage2 p:nth-child(4){
+	color: #04C37C;
+	text-align: center;
+	text-shadow: 1px 1px 1px #fff;
+	font-weight: bold;
+}
+.usage3{
+	padding-top: 80px;
+}
+.usage3 p:nth-child(4){
+	color: #D51A1D;
+	text-align: center;
+	text-shadow: 1px 1px 1px #fff;
+	font-weight: bold;
+}
+.bt{
+	background: -webkit-radial-gradient(#fff,#9855C1);
+	width: 53.333%;
+	height: 200px;
+	border-radius:  50%;
+	margin: 0 auto;
+}
+.tl{
+	background: -webkit-radial-gradient(#fff,#7FF3C0);
+	width: 53.333%;
+	height: 200px;
+	border-radius:  50%;
+	margin: 0 auto;
+}
+.cl{
+	background: -webkit-radial-gradient(#fff,#F9797B); 
+	width: 53.333%;
+	height: 200px;
+	border-radius:  50%;
+	margin: 0 auto;
+}
+.news{
+	text-align: center;
+	padding-top: 80px;
+}
+.news h1{
+	font-size: 150%;
+	font-weight: bold;
+}
+.news h2{
+	font-weight: bold;
+	padding-top: 30px;
+}
+#content{
+	position: relative;
+	top: 200px;
+}
+#princess{	
+	width: 40%;
+	position: absolute;
+	top: -200px;
+	left: 0;
+	z-index: 100;
+}
+#perfumes{
+	width: 60%;
+	position: absolute;
+	top: -200px;
+	right: 0;
+	z-index: 99;
+}
+#muse{
+	width: 100%;
+	position: absolute;
+	top: -50px;
+	z-index: 98;
+}
+#contact{
+	width: 21.333%;
+	border: 1px solid #666;
+	line-height: 40px;
+	text-align: center;
+	margin: 30px auto;
+}
+#contact a{
+	display: block;
+	color: #000;
+	text-decoration: none;
+}
+footer{
+	font-size: 75%;
+	text-align: center;
+	padding: 450px 0 10px 0;
+}
+
+
+
+/*Galaxy S5以下の画面サイズの設定*/
+@media screen and (max-width:360px){
+	.view{
+	width: 21.333%;
+	border: 1px solid #666;
+	line-height: 30px;
+	text-align: center;
+}
+	.collection1 .view{
+		position: absolute;
+		top: 160px;
+	}
+	#perfumes{
+	width: 60%;
+	position: absolute;
+	top: -200px;
+	right: 0;
+	z-index: 99;
+}
+#muse{
+	width: 100%;
+	position: absolute;
+	top: -60px;
+	z-index: 98;
+}
+#contact{
+	width: 21.333%;
+	border: 1px solid #666;
+	line-height: 40px;
+	text-align: center;
+	margin: 30px auto;
+}
+	footer{
+		padding-top: 200px;
+	}
+}
+@media screen and (max-width:320px){
+	.view{
+	width: 21.333%;
+	border: 1px solid #666;
+	line-height: 30px;
+	text-align: center;
+}
+	.collection1 .view{
+		position: absolute;
+		top: 180px;
+	}
+	.collection2 .view{
+		position: absolute;
+		top: 220px;
+	}
+	#perfumes{
+	width: 60%;
+	position: absolute;
+	top: -200px;
+	right: 0;
+	z-index: 99;
+}
+#muse{
+	width: 100%;
+	position: absolute;
+	top: -80px;
+	z-index: 98;
+}
+#contact{
+	width: 21.333%;
+	border: 1px solid #666;
+	line-height: 40px;
+	text-align: center;
+	margin: 30px auto;
+}
+}
+
+/*タブレット用の設定*/
+@media screen and (min-width:600px){
+	.pc { 
+	display: block;
+		width: 100vw;
+		height: 100vh; 
+}
+.sp { 
+	display: none; 
+}
+	#logo{
+		display: block;
+		position: absolute;
+		width: 400px;
+		top: 40%;
+		left: 25vw;
+	}
+	.collection0{
+		padding-top: 550px;
+	}
+	.bt{
+	background: -webkit-radial-gradient(#fff,#9855C1);
+	width: 200px;
+	height:200px;
+	border-radius:  100px;
+	margin: 0 auto;
+   }
+  .tl{
+	background: -webkit-radial-gradient(#fff,#7FF3C0);
+	width: 200px;
+	height: 200px;
+	border-radius:  100px;
+	margin: 0 auto;
+   }
+  .cl{
+	background: -webkit-radial-gradient(#fff,#F9797B); 
+	width: 200px;
+	height: 200px;
+	border-radius:  100px;
+	margin: 0 auto;
+   }
+	#princess{	
+	width: 307.2px;
+	position: absolute;
+	top: -200px;
+	left: 0;
+	z-index: 100;
+  }
+  #perfumes{
+	width: 460.8px;
+	position: absolute;
+	top: -200px;
+	right: 0;
+	z-index: 99;
+   }
+  #muse{
+	width: 768px;
+	position: absolute;
+	top: 100px;
+	z-index: 98;
+	}
+	  footer{
+    padding-top: 850px;
+  }
+
+}
+
+
+/*PC用スタイル*/
+@media screen and (min-width:960px){
+	#wrapper{
+		width:960px;
+	}
+	#logo{
+		display: block;
+		position: absolute;
+		width: 400px;
+		top: 40%;
+		left: 35vw;
+	}
+	.pc { 
+		display: block;
+		width: 100vw;
+		height: 100vh;
+	}
+    .sp {
+		display: none;
+	}
+	.ambra h1{
+		font-size: 30px;
+		font-weight: bold;
+		text-align: center;
+	    padding-top: 100px;
+        padding-bottom: 30px;
+	}
+	.collection p{
+		padding: 10px;
+	}
+	.collection0{
+		padding-top: 800px;
+		position: relative;
+	}
+	.collection0 h1{
+		font-size: 30px;
+		font-weight: bold;
+		text-align: center;
+		padding-bottom: 10px;
+	}
+	.collection1{
+		margin-top: 30px;
+	}
+	.collection1 .view{
+		position: absolute;
+		top: 200px;	
+	}
+	.collection2{
+		margin-top: 50px;
+	}
+	.collection2 .view{
+		position: absolute;
+		top: 200px;
+	}
+	.bt{
+	background: -webkit-radial-gradient(#fff,#9855C1);
+	width: 200px;
+	height: 200px;
+	border-radius:  100px;
+	margin: 0 auto;
+   }
+  .tl{
+	background: -webkit-radial-gradient(#fff,#7FF3C0);
+	width: 200px;
+	height: 200px;
+	border-radius:  100px;
+	margin: 0 auto;
+   }
+  .cl{
+	background: -webkit-radial-gradient(#fff,#F9797B); 
+	width: 200px;
+	height: 200px;
+	border-radius:  100px;
+	margin: 0 auto;
+   }
+  .usage0 h1{
+		font-size: 30px;
+		font-weight: bold;
+		text-align: center;
+	    padding-top: 100px;
+        padding-bottom: 30px;
+		
+	}
+	.usage{
+	height: 1490px;
+	background: url("../images/background2.jpg");
+	background-repeat: repeat-y;
+	}
+	.usage p{
+		padding: 10px;
+	}
+	.news h1{
+		font-size: 30px;
+		font-weight: bold;
+		text-align: center;
+	}
+	#princess{	
+	width: 384px;
+	position: absolute;
+	top: -200px;
+	left: 0;
+	z-index: 100;
+  }
+  #perfumes{
+	width: 576px;
+	position: absolute;
+	top: -200px;
+	right: 0;
+	z-index: 99;
+   }
+  #muse{
+	width: 960px;
+	position: absolute;
+	top: 150px;
+	z-index: 98;
+	}
+
+  footer{
+    padding-top: 1000px;
+  }
+}
