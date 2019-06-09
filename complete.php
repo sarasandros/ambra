@@ -26,12 +26,11 @@ mb_internal_encoding("UTF-8");
 ?>
 <!doctype html>
 <html>
-<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>お問い合わせ</title>
 <link href="css/reset.css" rel="stylesheet" type="text/css">
-<link href="css/contact.css" rel="stylesheet" type="text/css">
+<link href="css/complete.css" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
  $(function(){　//ページの内容（HTMLやCSSなど）を全て読み込み準備が整ったら実行
@@ -58,8 +57,8 @@ mb_internal_encoding("UTF-8");
 <nav>
   <ul>
     <li><a href="index.html">Top </a></li>
-    <li><a href="#">Collection</a></li>
-    <li><a href="#">How to use</a></li>
+    <li><a href="collection.html">Collection</a></li>
+    <li><a href="message.html">How to use</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
   </nav>

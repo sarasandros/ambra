@@ -15,11 +15,12 @@ $content = isset($_POST["content"])? $_POST["content"] : "";
 <!doctype html>
 <html>
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>お問い合わせ</title>
 <link href="css/reset.css" rel="stylesheet" type="text/css">
-<link href="css/contact.css" rel="stylesheet" type="text/css">
+<link href="css/confirm.css" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
  $(function(){　//ページの内容（HTMLやCSSなど）を全て読み込み準備が整ったら実行
