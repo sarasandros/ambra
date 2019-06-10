@@ -11,11 +11,6 @@ mb_internal_encoding("UTF-8");
  $message = "お問い合わせいただき誠にありがとうございます。" . "\n" .
  "お客様からのお問い合わせを下記内容にて受け付けました" . "\n" . "\n" .
  "お名前：" . $_POST["name"] . "\n" .
- "ふりがな：" . $_POST["furigana"] . "\n" .
- "郵便番号：" . $_POST["zip1"] . "-" . $_POST["zip2"] . "\n" .
- "都道府県：" . $_POST["pref"] . "\n" .
- "住所：" . $_POST["address"] . "\n" .
- "電話番号：" . $_POST["tel"] . "\n" .
  "E-Mail：" . $_POST["email1"] . "\n" .
  "お問い合わせ内容：" . "\n" .
  $_POST["content"] ;
@@ -39,10 +34,17 @@ mb_internal_encoding("UTF-8");
   });
 });	
 </script>
+<script type="text/javascript" src="js/jquery.backstretch.js"></script>
+<script>
+$(document).ready(function() {
+　　  $.backstretch("images/contact_back.jpg");
+
+    });
+</script>
 	</head>
 
 <body>
-<div id="wrapper" style="height:100vh;">
+<div id="wrapper">
 
 <!--ハンバーガーメニュー-->
 <div class="btnHamburger">
@@ -69,8 +71,14 @@ mb_internal_encoding("UTF-8");
 <article>
 <section>
 <h1>お問い合わせ</h1>	
-<p>送信完了</p>
-<p>お問い合わせありがとうございます。</p>
+<h2>
+送信完了<br>
+お問い合わせありがとうございます。
+<div id="btn"><a href="index.html">
+Top
+</a>
+</div>
+</h2>
 </section>	
 </article>	
 </main>
